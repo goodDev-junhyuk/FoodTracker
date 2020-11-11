@@ -7,11 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: Properties
     @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var photoImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         mealNameLabel.text = "Default Label"
         
     }
+    
+    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
+        
+        // 키보드 숨기기.
+        nameTextField.resignFirstResponder()
+        
+        
+        
+    }
+    
     
     // MARK: UITextField Delegate Pattern.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

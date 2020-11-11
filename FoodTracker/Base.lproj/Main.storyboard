@@ -41,26 +41,47 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="ATA-dG-bWk">
+                                <rect key="frame" x="16" y="172" width="320" height="320"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="Fm0-Xn-eUz"/>
+                                    <constraint firstAttribute="width" secondItem="ATA-dG-bWk" secondAttribute="height" multiplier="1:1" id="jyL-Hn-d12"/>
+                                    <constraint firstAttribute="width" constant="320" id="zUH-tB-UVd"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="R1K-8U-hv6" appends="YES" id="rRA-3l-UzA"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="4Rm-Sf-xtd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="94T-cf-c29"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Rm-Sf-xtd" secondAttribute="trailing" constant="16" id="GMK-g2-iMA"/>
+                            <constraint firstItem="ATA-dG-bWk" firstAttribute="leading" secondItem="4Rm-Sf-xtd" secondAttribute="leading" id="XJp-0S-J1s"/>
                             <constraint firstItem="4Rm-Sf-xtd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="u4T-Am-I8N"/>
+                            <constraint firstItem="ATA-dG-bWk" firstAttribute="top" secondItem="4Rm-Sf-xtd" secondAttribute="bottom" constant="7.6666666666666856" id="y8t-gG-hAb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="mealNameLabel" destination="l4v-AG-aiD" id="jUs-ff-3lw"/>
                         <outlet property="nameTextField" destination="q75-fQ-2s6" id="LIn-EW-PHX"/>
+                        <outlet property="photoImageView" destination="ATA-dG-bWk" id="F56-hg-F2S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="R1K-8U-hv6">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="NTf-D7-zXw"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="45" y="32"/>
+            <point key="canvasLocation" x="44.615384615384613" y="31.990521327014218"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Image" width="540" height="540"/>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

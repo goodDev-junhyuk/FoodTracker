@@ -14,6 +14,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     
+    
+    // App Cycle.
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -42,6 +44,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
         
+        print("gggggg 사진이 안나온다.")
+        
         
     }
     
@@ -64,11 +68,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
     }
     
-    
-    
-    
-    
-    
     // MARK: UITextFieldDelegate Pattern.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
@@ -81,10 +80,5 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         mealNameLabel.text = textField.text
     }
-    
-    
-    
-    
-
 }
 

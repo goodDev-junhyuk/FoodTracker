@@ -14,12 +14,22 @@ class RatingControl: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        
     }
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
 
+    }
+    
+    func ratingButtonTapped(button: UIButton) {
+        
+        
+    }
+    
+    // MARK: - Private Methods.
+    private func setupButtons() {
+        
+        
     }
     
 

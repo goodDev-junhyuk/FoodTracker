@@ -29,7 +29,16 @@ class RatingControl: UIStackView {
     // MARK: - Private Methods.
     private func setupButtons() {
         
+        // 커스텀방식으로 버튼 만들기.
+        let button = UIButton()
+        button.backgroundColor = UIColor.red
         
+        // 제약 조건
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
+        
+        addArrangedSubview(button)
     }
     
 

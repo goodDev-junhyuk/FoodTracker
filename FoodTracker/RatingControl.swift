@@ -9,12 +9,21 @@ import UIKit
 
 @IBDesignable class RatingControl: UIStackView {
     
-    private var ratingButtons = [UIButton]()
     
+    private var ratingButtons = [UIButton]()
     var rating = 0
     
-    @IBDesignable var starSize: CGSize = CGSize(width: 44.0, height: 44.0)
-    @IBDesignable var starCount: Int = 5
+    @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
+        didSet {
+            setupButtons()
+        }
+    }
+    
+    @IBInspectable var starCount: Int = 5 {
+        didSet {
+            setupButtons()
+        }
+    }
     
     // MARK: - 이니셜라이저(Swift Language)
     
@@ -61,6 +70,8 @@ import UIKit
         }
     }
 }
+
+
 
 
 

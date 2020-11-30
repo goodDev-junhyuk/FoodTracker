@@ -49,11 +49,29 @@ import UIKit
     // MARK: - Private Methods.
     private func setupButtons() {
         
-        for _ in 0..<5 {
+        for button in ratingButtons {
             
-            // 커스텀방식으로 버튼 만들기.
+            removeArrangedSubview(button)
+            button.removeFromSuperview()
+        }
+        
+        ratingButtons.removeAll()
+        
+        // 커스텀방식으로 버튼 이미지 불러오기
+        let bundle = Bundle(for: type(of: self))
+        let filledStar = UIImage(named: "filledStar", in: bundle, compatibleWith: self.traitCollection)
+        let emptyStart = UIImage(named: "emptyStart", in: bundle, compatibleWith: self.traitCollection)
+        let highlightedStar = UIImage(named: "highlightedStar", in: bundle, compatibleWith: self.traitCollection)
+        
+        for _ in 0..<starCount {
+            
+           // 커스텀방식으로 버튼 만들기.
             let button = UIButton()
-            button.backgroundColor = UIColor.red
+            
+            button.setImage(emptyStart, for: .normal)
+            button.setImage(filledStar, for: .selected)
+            button.setImage(highlightedStar, for: .highlighted)
+            button.setImage(highlightedStar, for: [.highlighted, .selected])
             
             // 제약 조건
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -65,7 +83,6 @@ import UIKit
             addArrangedSubview(button)
             
             ratingButtons.append(button)
-            
             
         }
     }

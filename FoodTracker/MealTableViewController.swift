@@ -59,7 +59,15 @@ class MealTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MealTableViewCell", for: indexPath) as? MealTableViewCell else {
+            fatalError("MealTableViewCell의 인스턴스가 아닙니다.")
+        }
+        
+        let meal = meals[indexPath.row]
+        
+        cell.nameLabel.text = meal.name
+        cell.photoImageView.image = meal.photo
+        cell.ratingControl.rating = meal.rating
 
         // Configure the cell...
 
@@ -67,13 +75,13 @@ class MealTableViewController: UITableViewController {
     }
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
     /*
     // Override to support editing the table view.
